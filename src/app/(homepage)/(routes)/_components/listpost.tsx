@@ -1,13 +1,36 @@
-const ListPost = () => {
+interface ListPostProps {
+  post: {
+    attributes: {
+      Titulo: string;
+      createdAt: string;
+      updatedAt: string;
+      Sumario: string;
+      Destaque: boolean;
+      Conteudo: string;
+      Categoria: string;
+      slug: string;
+      Thumbnail: {
+        data: {
+          attributes: {
+            url: string;
+          };
+        };
+      };
+    };
+  };
+}
+
+const ListPost: React.FC<ListPostProps> = ({ post }) => {
   return (
-    <div className="flex flex-col h-[181px]">
+    <div className="flex flex-col h-[150px]">
       <div className="flex">
-        <div>By xxxxxxx |</div>
-        <div className="pl-2">Last update</div>
+        <div>{post.attributes.Categoria} |</div>
+        <div className="pl-2">
+          {new Date(post.attributes.updatedAt).toLocaleDateString()}
+        </div>
       </div>
-      <div className="text-xl font-bold">
-        8 Figma design systems that you can download for free today.
-      </div>
+      <div className="text-xl font-bold">{post.attributes.Titulo}</div>
+      <div>{post.attributes.Sumario}</div>
     </div>
   );
 };

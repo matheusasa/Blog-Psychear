@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const NavBar = () => {
   return (
-    <div className="bg-preto h-[80px] w-full flex  items-center text-white ">
+    <div className="bg-gray-900 h-[80px] w-full flex  items-center text-white ">
       <div className="pl-[83px]">Mudar cor</div>
       <div className="flex justify-end items-center w-full px-5">
         <div className="px-5">
