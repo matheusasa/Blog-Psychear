@@ -10,7 +10,7 @@ import fetchBlog from "@/app/helpers/fetch-blogs";
 
 export default async function Home() {
   const blogs = await fetchBlog(`filters[Destaque][$eq]=true`);
-
+  console.log(blogs.data);
   return (
     <div className="">
       <NavBar />

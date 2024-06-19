@@ -22,28 +22,30 @@ const PostPage = async (props: any) => {
     slug,
     Thumbnail,
     ImagemContent,
-  } = blogs.attributes;
+  } = blogs;
 
   const htmlContent = await parseMarkdown(Conteudo);
 
   return (
     <div>
       <NavBar />
-      <div className="h-full text-black">
+      <div className="h-full py-[64px] text-black">
         <div className="flex flex-col px-[400px]">
           <div className="flex justify-start text-2xl font-bold">
             {Categoria}
           </div>
-          <div className="text-5xl font-bold">{Titulo}</div>
-          <div>
+          <div className="text-5xl font-bold ">{Titulo}</div>
+          <div className="py-[32px]">
             <Image
-              src={`${config.api}${ImagemContent.data.attributes.url}`}
-              alt={ImagemContent.data.attributes.name}
+              src={`${config.api}${ImagemContent.url}`}
+              alt={ImagemContent.name}
               width={1000}
               height={500}
             ></Image>
           </div>
-          <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+          <div className="">
+            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+          </div>
         </div>
       </div>
       <Footer />

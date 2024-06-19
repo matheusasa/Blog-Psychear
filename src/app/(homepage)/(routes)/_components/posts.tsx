@@ -13,14 +13,12 @@ const Posts: React.FC<PostProps> = ({ blogs }) => {
   const recentPost = blogs.data[blogs.data.length - 1];
   const posts = blogs.data;
   const router = useRouter();
-  console.log(blogs.data);
   const RecentPostLink = (slug: string) => {
     const handleClick = () => {
       router.push(`/blog/` + slug);
     };
     return handleClick;
   };
-
   return (
     <div className="flex py-[128px] px-[80px]">
       <div className="">
@@ -31,21 +29,17 @@ const Posts: React.FC<PostProps> = ({ blogs }) => {
               style={{ position: "relative", width: "100%", height: "100%" }}
             >
               <Image
-                src={`${config.api}${recentPost.attributes.Thumbnail.data.attributes.url}`}
-                alt={recentPost.attributes.Thumbnail.data.attributes.name}
+                src={`${config.api}${recentPost.Thumbnail.url}`}
+                alt={recentPost.Thumbnail.name}
                 layout="fill"
                 objectFit="cover"
               />
               <div className="absolute inset-0 bg-black bg-opacity-50 ">
                 <div className="flex flex-col justify-start text-white h-full px-[100px] pt-[270px]">
-                  <h1 className="text-3xl font-bold">
-                    {recentPost.attributes.Titulo}
-                  </h1>
-                  <p>{recentPost.attributes.Sumario}</p>
+                  <h1 className="text-3xl font-bold">{recentPost.Titulo}</h1>
+                  <p>{recentPost.Sumario}</p>
                   <div className="pt-5">
-                    <Button
-                      onClick={RecentPostLink(recentPost.attributes.slug)}
-                    >
+                    <Button onClick={RecentPostLink(recentPost.slug)}>
                       Saiba mais...
                     </Button>
                   </div>
@@ -57,7 +51,7 @@ const Posts: React.FC<PostProps> = ({ blogs }) => {
           )}
         </div>
       </div>
-      <div className="pl-[40px]">
+      <div className="pl-[40px] w-full">
         <div className="flex">
           <div className="text-3xl font-bold pb-[32px] w-full">
             Todas as postagens
@@ -70,7 +64,11 @@ const Posts: React.FC<PostProps> = ({ blogs }) => {
           posts
             .slice(Math.max(posts.length - 5, 0), posts.length - 1)
             .reverse()
-            .map((post: any) => <ListPost key={post.id} post={post} />)
+            .map((post: any) => (
+              <Link href={`/blog/${post.slug}`}>
+                <ListPost key={post.id} post={post} />
+              </Link>
+            ))
         ) : (
           <div>Carregando...</div>
         )}

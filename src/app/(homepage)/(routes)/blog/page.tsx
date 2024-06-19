@@ -19,7 +19,7 @@ const BlogPage = async () => {
             .slice(Math.max(blogs.length - 5, 0), blogs.length)
             .reverse()
             .map((blog: any) => (
-              <Link href={`/blog/${blog.attributes.slug}`}>
+              <Link href={`/blog/${blog.slug}`}>
                 <CardPost key={blog.id} blog={blog} />
               </Link>
             ))

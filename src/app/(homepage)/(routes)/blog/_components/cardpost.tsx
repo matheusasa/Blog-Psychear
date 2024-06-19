@@ -17,12 +17,12 @@ const CardPost: React.FC<CardProps> = ({ blog }) => {
     slug,
     Thumbnail,
     ImagemContent,
-  } = blog.attributes;
+  } = blog;
   return (
-    <div className="py-[32px] flex h-[420px]">
+    <div className="py-[32px] flex h-[420px] transition-transform transform hover:scale-105 hover:shadow-lg rounded-lg">
       <div className="border w-[600px]">
         <Image
-          src={`${config.api}${ImagemContent.data.attributes.url}`}
+          src={`${config.api}${ImagemContent.url}`}
           alt="alt"
           width={500}
           height={100}

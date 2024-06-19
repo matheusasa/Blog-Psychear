@@ -3,7 +3,7 @@ import config from "@/config";
 const fetchBlog = async (params: any) => {
   const reqOptions: RequestInit = {
     headers: {
-      Authorization: `Bearer 06a50e0650016f5a72ecc2383ac8502b88bb3f74dc60fbfa688e5edbf407a0bd506d223b5c2b915aa48c6003fdf2a7508469eef778fd444adeb29f97a2e77476afba3d16e5d16c10110f847efd04fe83728c8b2a2246a6b3c75fcc3f47b939a5d7567508647c460f8a3bde93fd997735a70a0c182c0b45745deae58b0290b06d`,
+      Authorization: `Bearer 8b388ba616d6cd6aedf473a96707003b4e6db9c1440dcb442bfeffc540bcb6d7c856c3e44e19acf757a2e69f673d698d69a946698db579a73e054be441679424a12dbb2878f580adb52bc574902b9d59794feef65722f8896b9b361cbf07203e1b3717f41bae6af0565dd80b34d89ed2a6b49fc0f8d5d7e3b240257395896d91`,
     },
   };
   try {
