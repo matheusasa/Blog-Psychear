@@ -22,6 +22,7 @@ const PostPage = async (props: any) => {
     slug,
     Thumbnail,
     ImagemContent,
+    categorias,
   } = blogs;
 
   const htmlContent = await parseMarkdown(Conteudo);
@@ -32,7 +33,7 @@ const PostPage = async (props: any) => {
       <div className="h-full py-[64px] text-black">
         <div className="flex flex-col px-[400px]">
           <div className="flex justify-start text-2xl font-bold">
-            {Categoria}
+            {categorias[0]["Nome"]}
           </div>
           <div className="text-5xl font-bold ">{Titulo}</div>
           <div className="py-[32px]">

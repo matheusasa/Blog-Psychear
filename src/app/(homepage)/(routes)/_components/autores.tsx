@@ -7,7 +7,7 @@ const Autores = () => {
       <div>
         <div className=" flex justify-center text-3xl">Lista de Autores</div>
         <div className="flex justify-between w-full pt-[48px]">
-          <div className="border rounded w-[300px] h-[420px] flex flex-col hover:bg-lightyellow items-center">
+          <div className="border transition-transform transform hover:scale-105 hover:shadow-lg rounded-lg w-[300px] h-[420px] flex flex-col hover:bg-lightyellow items-center">
             <div className="flex justify-center w-full pt-[50px]  ">
               <Image
                 src={"/autor1.jpeg"}
@@ -24,7 +24,7 @@ const Autores = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.!
             </div>
           </div>
-          <div className="border rounded w-[300px] h-[420px] flex flex-col hover:bg-lightyellow items-center">
+          <div className="border transition-transform transform hover:scale-105 hover:shadow-lg rounded-lg w-[300px] h-[420px] flex flex-col hover:bg-lightyellow items-center">
             <div className="flex justify-center w-full pt-[50px]  ">
               <Image
                 src={"/autor1.jpeg"}
@@ -41,7 +41,7 @@ const Autores = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.!
             </div>
           </div>
-          <div className="border rounded w-[300px] h-[420px] flex flex-col hover:bg-lightyellow items-center">
+          <div className="border transition-transform transform hover:scale-105 hover:shadow-lg rounded-lg w-[300px] h-[420px] flex flex-col hover:bg-lightyellow items-center">
             <div className="flex justify-center w-full pt-[50px]  ">
               <Image
                 src={"/autor1.jpeg"}
@@ -58,7 +58,7 @@ const Autores = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.!
             </div>
           </div>
-          <div className="border rounded w-[300px] h-[420px] flex flex-col hover:bg-lightyellow items-center">
+          <div className="border transition-transform transform hover:scale-105 hover:shadow-lg rounded-lg w-[300px] h-[420px] flex flex-col hover:bg-lightyellow items-center">
             <div className="flex justify-center w-full pt-[50px]  ">
               <Image
                 src={"/autor1.jpeg"}
@@ -75,7 +75,7 @@ const Autores = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.!
             </div>
           </div>
-          <div className="border rounded w-[300px] h-[420px] flex flex-col hover:bg-lightyellow items-center">
+          <div className="border transition-transform transform hover:scale-105 hover:shadow-lg rounded-lg w-[300px] h-[420px] flex flex-col hover:bg-lightyellow items-center">
             <div className="flex justify-center w-full pt-[50px]  ">
               <Image
                 src={"/autor1.jpeg"}

@@ -19,7 +19,7 @@ const CardPost: React.FC<CardProps> = ({ blog }) => {
     ImagemContent,
   } = blog;
   return (
-    <div className="py-[32px] flex h-[420px] transition-transform transform hover:scale-105 hover:shadow-lg rounded-lg">
+    <div className="py-[32px] flex h-[420px] transition-transform transform hover:scale-105 px-5 hover:shadow-lg rounded-lg">
       <div className="border w-[600px]">
         <Image
           src={`${config.api}${ImagemContent.url}`}

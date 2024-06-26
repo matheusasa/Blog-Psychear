@@ -13,14 +13,20 @@ interface ListPostProps {
         url: string;
       };
     };
+    categorias: [
+      {
+        id: string;
+        Nome: string;
+      }
+    ];
   };
 }
 
 const ListPost: React.FC<ListPostProps> = ({ post }) => {
   return (
     <div className="flex flex-col h-[150px]  transition-transform transform hover:scale-105 hover:shadow-lg rounded-lg">
-      <div className="flex px-5">
-        <div>{post.Categoria} |</div>
+      <div className="flex px-5 pt-5">
+        <div>{post.categorias[0]["Nome"]} |</div>
         <div className="pl-2">
           {new Date(post.updatedAt).toLocaleDateString()}
         </div>

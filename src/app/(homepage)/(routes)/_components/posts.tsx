@@ -23,14 +23,14 @@ const Posts: React.FC<PostProps> = ({ blogs }) => {
     <div className="flex py-[128px] px-[80px]">
       <div className="">
         <div className="text-3xl font-bold pb-[32px]">Postagens recentes</div>
-        <div className="w-[1140px] h-[633px] border rounded relative overflow-hidden">
+        <div className="w-[1140px] h-[633px] border transition-transform transform hover:scale-105 hover:shadow-lg rounded-lg relative overflow-hidden">
           {recentPost ? (
             <div
               style={{ position: "relative", width: "100%", height: "100%" }}
             >
               <Image
-                src={`${config.api}${recentPost.Thumbnail.url}`}
-                alt={recentPost.Thumbnail.name}
+                src={`${config.api}${recentPost.ImagemContent.url}`}
+                alt={recentPost.ImagemContent.name}
                 layout="fill"
                 objectFit="cover"
               />

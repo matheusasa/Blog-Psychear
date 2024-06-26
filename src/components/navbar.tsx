@@ -8,12 +8,21 @@ const NavBar = () => {
     <div className="bg-gray-900 h-[80px] w-full flex  items-center text-white ">
       <div className="pl-[83px] ">
         <Link href="/">
-          <Image src={logo} alt="alt" width={60} height={60} />
+          <Image
+            src={logo}
+            alt="alt"
+            width={60}
+            height={60}
+            className="rounded-full"
+          />
         </Link>
       </div>
       <div className="flex justify-end items-center w-full px-5">
         <div className="px-5">
           <Link href="/">Home</Link>{" "}
+        </div>
+        <div className="px-5">
+          <Link href="/cursos">Cursos</Link>
         </div>
         <div className="px-5">
           <Link href="/blog">Blog</Link>{" "}

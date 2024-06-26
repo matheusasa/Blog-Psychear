@@ -3,6 +3,7 @@ import NavBar from "@/components/navbar";
 import CardPost from "./_components/cardpost";
 import fetchBlog from "@/app/helpers/fetch-blogs";
 import Link from "next/link";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const BlogPage = async () => {
   const response = await fetchBlog(`filters[Destaque][$eq]=true`);
@@ -28,8 +29,12 @@ const BlogPage = async () => {
         )}
 
         <div className="flex items-center justify-center py-[64px]">
-          <div className="px-5 text-3xl">Anterior</div>
-          <div className="px-5 text-3xl">Proximo</div>
+          <div className="px-5 text-3xl">
+            <ArrowLeft />
+          </div>
+          <div className="px-5 text-3xl">
+            <ArrowRight />
+          </div>
         </div>
       </div>
       <Footer />

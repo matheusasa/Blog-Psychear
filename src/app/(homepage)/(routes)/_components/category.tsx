@@ -1,55 +1,44 @@
+import React from "react";
 import { Building2, CircleDollarSign, Cpu, Rocket } from "lucide-react";
 
-const Category = () => {
+// Defina a estrutura do objeto `cat` com uma interface
+interface Cat {
+  id: number;
+  Nome: string;
+  Descricao: string;
+}
+
+interface CategoryProps {
+  cat: Cat[];
+}
+
+const Category: React.FC<CategoryProps> = ({ cat }) => {
+  // Verificação se `cat` é um array antes de usar `map`
+  if (!Array.isArray(cat)) {
+    return <div className="px-[80px] pb-[125px] ">No categories available</div>;
+  }
+
   return (
     <div className="px-[80px] pb-[125px] ">
       <div>
-        <div className=" flex justify-center text-3xl">Choose A Catagory</div>
+        <div className="flex justify-center text-3xl font-bold">
+          Escolha uma categoria
+        </div>
         <div className="flex justify-between w-full pt-[48px]">
-          <div className="border rounded w-[300px] h-[220px] flex flex-col hover:bg-lavander items-center">
-            <div className="flex justify-start w-full pt-[50px] pl-10">
-              <Building2 />
+          {cat.map((cat) => (
+            <div
+              key={cat.id} // Certifique-se de que a chave é única
+              className="border w-[300px] h-FILL flex flex-col hover:bg-lavander items-center transition-transform transform hover:scale-105 hover:shadow-lg rounded-lg"
+            >
+              <div className="flex justify-start w-full pt-[50px] px-10">
+                <Building2 />
+              </div>
+              <div className="flex justify-start w-full px-10 py-5 text-xl font-bold">
+                {cat.Nome}
+              </div>
+              <div className="px-10">{cat.Descricao}</div>
             </div>
-            <div className="flex justify-start w-full pl-10 py-5 text-xl font-bold">
-              Business
-            </div>
-            <div className="pl-10">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.!
-            </div>
-          </div>
-          <div className="border rounded w-[300px] h-[220px] hover:bg-lavander transition flex flex-col items-center">
-            <div className="flex justify-start w-full pt-[50px] pl-10">
-              <Rocket />
-            </div>
-            <div className="flex justify-start w-full pl-10 py-5 text-xl font-bold">
-              Startup
-            </div>
-            <div className="pl-10">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.!
-            </div>
-          </div>
-          <div className="border rounded w-[300px] h-[220px] flex flex-col hover:bg-lavander items-center">
-            <div className="flex justify-start w-full pt-[50px] pl-10">
-              <CircleDollarSign />
-            </div>
-            <div className="flex justify-start w-full pl-10 py-5 text-xl font-bold">
-              Economy
-            </div>
-            <div className="pl-10">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.!
-            </div>
-          </div>
-          <div className="border rounded w-[300px] h-[220px] flex flex-col hover:bg-lavander items-center">
-            <div className="flex justify-start w-full pt-[50px] pl-10">
-              <Cpu />
-            </div>
-            <div className="flex justify-start w-full pl-10 py-5 text-xl font-bold">
-              Technology
-            </div>
-            <div className="pl-10">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.!
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
