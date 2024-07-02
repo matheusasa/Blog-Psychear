@@ -1,6 +1,6 @@
 const nextConfig = {
   images: {
-    domains: ["127.0.0.1"], // Adicione seu hostname aqui
+    domains: ["cmsblog-qyfe.onrender.com"], // Adicione seu hostname aqui
     // ou use remotePatterns para configurar padrões remotos
     // remotePatterns: [],
   },
