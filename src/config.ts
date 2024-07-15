@@ -1,4 +1,4 @@
 const config = {
-  api: "http://127.1.1.0:1337",
+  api: "https://cmsblog-qyfe.onrender.com",
 };
 export default config;
