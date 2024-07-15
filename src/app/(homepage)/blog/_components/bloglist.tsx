@@ -2,7 +2,19 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import CardPost from "../_components/cardpost"; // Ajuste o caminho conforme necessário
 
-const BlogList = ({ blogs, currentPage, postsPerPage, paginate }) => {
+interface BlogListProps {
+  blogs: any;
+  currentPage: number;
+  postsPerPage: number;
+  paginate: (pageNumber: number) => void;
+}
+
+const BlogList = ({
+  blogs,
+  currentPage,
+  postsPerPage,
+  paginate,
+}: BlogListProps) => {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = blogs.slice(indexOfFirstPost, indexOfLastPost);
