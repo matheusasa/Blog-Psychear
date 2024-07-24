@@ -15,7 +15,7 @@ const Posts: React.FC<PostProps> = ({ blogs }) => {
   const recentPost = blogs.data[blogs.meta.pagination.total - 1].attributes;
   const posts = blogs.data;
   const router = useRouter();
-
+  console.log(posts);
   const RecentPostLink = (slug: string) => {
     const handleClick = () => {
       router.push(`/blog/` + slug);
@@ -69,7 +69,7 @@ const Posts: React.FC<PostProps> = ({ blogs }) => {
             .slice(Math.max(posts.length - 5, 0), posts.length - 1)
             .reverse()
             .map((post: any) => (
-              <Link href={`/blog/${post.slug}`} key={post.id}>
+              <Link href={`/blog/${post.attributes.slug}`} key={post.id}>
                 <ListPost key={post.id} post={post} />
               </Link>
             ))
