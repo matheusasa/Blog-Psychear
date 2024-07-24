@@ -6,7 +6,7 @@ const ListPost: React.FC<ListPostProps> = ({ post }) => {
   return (
     <div className="flex flex-col h-[150px]  transition-transform transform hover:scale-105 hover:shadow-lg rounded-lg">
       <div className="flex px-5 pt-5">
-        <div>{post.attributes.categoria_blog.data.attributes.Nome} |</div>
+        <div>{post.attributes.categoria_blogs.data.attributes.Nome} |</div>
         <div className="pl-2">
           {new Date(post.attributes.updatedAt).toLocaleDateString()}
         </div>
