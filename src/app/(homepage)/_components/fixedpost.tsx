@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+interface FixedProps {
+  noscomecamos: any;
+}
 
-const FixedPost = () => {
+const FixedPost: React.FC<FixedProps> = ({ noscomecamos }) => {
   return (
     <div className="px-[80px] relative pb-[126px]">
       <div className="relative z-10">
@@ -10,15 +13,12 @@ const FixedPost = () => {
       </div>
       <div className="absolute top-[50px] left-[900px] z-20 h-[584px] w-[806px] bg-white">
         <div className="p-[80px]">
-          <div className="text-2xl pb-[24px]">WHY WE STARTED</div>
+          <div className="text-2xl pb-[24px]">PORQUÊ NÓS COMEÇAMOS?</div>
           <div className="text-5xl font-bold">
-            It started out as a simple idea and evolved into our passion
+            {noscomecamos.data.attributes.Titulo}
           </div>
           <div className="pt-[16px] pb-[32px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip.
+            {noscomecamos.data.attributes.Resumo}
           </div>
           <div>
             <Button variant={"lavander"} size={"lg"}>

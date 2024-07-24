@@ -6,32 +6,23 @@ interface CardProps {
 }
 
 const CardPost: React.FC<CardProps> = ({ blog }) => {
-  const {
-    categoria_blogs,
-    Titulo,
-    createdAt,
-    updatedAt,
-    Sumario,
-    Destaque,
-    Conteudo,
-    slug,
-    Thumbnail,
-    ImagemContent,
-  } = blog.attributes;
-
-  const categorias = blog.categorias;
+  const { categoria_blogs, Titulo, Sumario, ImagemContent } = blog.attributes;
 
   return (
     <div className="py-[32px] flex h-[420px] transition-transform transform hover:scale-105 px-5 hover:shadow-lg rounded-lg">
-      <div className="w-[600px] flex items-center">
-        <Image
-          src={`${config.api}${ImagemContent.data.attributes.url}`}
-          alt="alt"
-          width={400}
-          height={100}
-        />
+      <div className="w-[300px] flex items-center justify-center">
+        <div className="relative w-full h-full max-h-[400px]">
+          <Image
+            src={`${config.api}${ImagemContent.data.attributes.url}`}
+            alt={Titulo}
+            width={300}
+            height={200}
+            objectFit="contain"
+            className="rounded-lg"
+          />
+        </div>
       </div>
-      <div className="pl-[64px] py-[64px]">
+      <div className="pl-[32px] py-[32px]">
         <div className="text-2xl font-bold">
           {categoria_blogs.data.attributes.Nome}
         </div>
@@ -41,4 +32,5 @@ const CardPost: React.FC<CardProps> = ({ blog }) => {
     </div>
   );
 };
+
 export default CardPost;

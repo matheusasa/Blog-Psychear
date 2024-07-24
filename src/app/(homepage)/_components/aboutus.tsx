@@ -1,6 +1,8 @@
 import Link from "next/link";
-
-const Sobre = () => {
+interface SobreProps {
+  mission: any;
+}
+const Sobre: React.FC<SobreProps> = ({ mission }) => {
   return (
     <div className="px-[80px] pb-[125px]">
       <div className="w-full border rounded bg-lavander h-[500px] flex">
@@ -20,14 +22,9 @@ const Sobre = () => {
         <div className="p-[80px] w-[50%]">
           <div className="text-2xl">NOSSA MISSAO</div>
           <div className="text-5xl font-bold">
-            Creating valuable content for creatives all around the world
+            {mission.data.attributes.Titulo}
           </div>
-          <div className="py-[16px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </div>
+          <div className="py-[16px]">{mission.data.attributes.Resumo}</div>
         </div>
       </div>
     </div>
