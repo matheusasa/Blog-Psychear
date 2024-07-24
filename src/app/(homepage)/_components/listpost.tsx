@@ -3,10 +3,6 @@ interface ListPostProps {
 }
 
 const ListPost: React.FC<ListPostProps> = ({ post }) => {
-  console.log(post.attributes.categoria_blog.data.attributes.Nome);
-  console.log(post.attributes.updatedAt);
-  console.log(post.attributes.Titulo);
-  console.log(post.attributes.Sumario);
   return (
     <div className="flex flex-col h-[150px]  transition-transform transform hover:scale-105 hover:shadow-lg rounded-lg">
       <div className="flex px-5 pt-5">

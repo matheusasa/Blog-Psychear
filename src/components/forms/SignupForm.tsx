@@ -31,8 +31,6 @@ export function SignupForm() {
     INITIAL_STATE
   );
 
-  console.log(formState, "client");
-
   return (
     <div className="w-full max-w-md">
       <form action={formAction}>
@@ -77,7 +75,7 @@ export function SignupForm() {
             </div>
           </CardContent>
           <CardFooter className="flex flex-col">
-          <SubmitButton
+            <SubmitButton
               className="w-full"
               text="Sign Up"
               loadingText="Loading"

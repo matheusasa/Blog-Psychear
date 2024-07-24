@@ -1,0 +1,5 @@
+{
+  "http://217.196.60.6:1337/uploads/WYD_2024_07_21_19_59_48_e41d4f3cd7.mp4": { "integrity": "sha512-4Vd9HN6RfYd4NXIxKOrYAcAifrf3AypMeer9+YdEBt970KKodfPPOVoCHO+JXKZ+7Ha05oh1yFvnSW6iBqaIkw==", "contentType": "video/mp4" },
+  "https://strapi.mtswebsft.online/uploads/WYD_2024_07_21_19_59_48_27a1b12810.mp4": { "integrity": "sha512-4Vd9HN6RfYd4NXIxKOrYAcAifrf3AypMeer9+YdEBt970KKodfPPOVoCHO+JXKZ+7Ha05oh1yFvnSW6iBqaIkw==", "contentType": "video/mp4" },
+  "version": 1
+}

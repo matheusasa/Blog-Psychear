@@ -48,7 +48,6 @@ export default function DashboardLayout({
         </div>
       </nav>
       <main className="flex flex-col overflow-scroll">{children}</main>
-      <LogoutButton />
     </div>
   );
 }

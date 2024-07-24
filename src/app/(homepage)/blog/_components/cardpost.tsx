@@ -7,7 +7,7 @@ interface CardProps {
 
 const CardPost: React.FC<CardProps> = ({ blog }) => {
   const {
-    categoria_blog,
+    categoria_blogs,
     Titulo,
     createdAt,
     updatedAt,
@@ -20,7 +20,6 @@ const CardPost: React.FC<CardProps> = ({ blog }) => {
   } = blog.attributes;
 
   const categorias = blog.categorias;
-  console.log(categorias);
 
   return (
     <div className="py-[32px] flex h-[420px] transition-transform transform hover:scale-105 px-5 hover:shadow-lg rounded-lg">
@@ -28,13 +27,13 @@ const CardPost: React.FC<CardProps> = ({ blog }) => {
         <Image
           src={`${config.api}${ImagemContent.data.attributes.url}`}
           alt="alt"
-          width={500}
+          width={400}
           height={100}
         />
       </div>
       <div className="pl-[64px] py-[64px]">
         <div className="text-2xl font-bold">
-          {categoria_blog.data.attributes.Nome}
+          {categoria_blogs.data.attributes.Nome}
         </div>
         <div className="text-3xl font-bold">{Titulo}</div>
         <div className="text-xl">{Sumario}</div>

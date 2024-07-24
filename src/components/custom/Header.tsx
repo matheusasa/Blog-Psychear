@@ -10,8 +10,11 @@ interface AuthUserProps {
   email: string;
 }
 
-
-export function LoggedInUser({ userData }: { readonly userData: AuthUserProps }) {
+export function LoggedInUser({
+  userData,
+}: {
+  readonly userData: AuthUserProps;
+}) {
   return (
     <div className="flex gap-2">
       <Link
@@ -42,7 +45,6 @@ interface HeaderProps {
 
 export async function Header({ data }: Readonly<HeaderProps>) {
   const user = await getUserMeLoader();
-  console.log(user);
 
   const { logoText, ctaButton } = data;
   return (

@@ -1,4 +1,4 @@
 const config = {
-  api: "https://cmsblog-qyfe.onrender.com",
+  api: "https://strapi.mtswebsft.online",
 };
 export default config;

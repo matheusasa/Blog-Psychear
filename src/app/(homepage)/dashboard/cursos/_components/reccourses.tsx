@@ -28,8 +28,8 @@ const RecCourses: React.FC<Props> = ({ recommendedCursos }) => {
             <CardHeader>
               <div className="relative w-full h-[200px]">
                 <Image
-                  src={`${config.api}${curso.Thumb.data[0].attributes.url}`}
-                  alt={curso.Thumb.data[0].attributes.name}
+                  src={`${config.api}${curso.attributes.Thumb.data.attributes.url}`}
+                  alt={curso.attributes.Thumb.data.attributes.name}
                   layout="fill"
                   objectFit="cover"
                   className="rounded-lg"
