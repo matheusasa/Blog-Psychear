@@ -33,9 +33,9 @@ export function SigninForm() {
       <form action={formAction}>
         <Card>
           <CardHeader className="space-y-1">
-            <CardTitle className="text-3xl font-bold">Sign In</CardTitle>
+            <CardTitle className="text-3xl font-bold">Entrar</CardTitle>
             <CardDescription>
-              Enter your details to sign in to your account
+              Insira seus dados para acessar sua conta
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -45,17 +45,17 @@ export function SigninForm() {
                 id="identifier"
                 name="identifier"
                 type="text"
-                placeholder="username or email"
+                placeholder="usuário ou email"
               />
               <ZodErrors error={formState?.zodErrors?.identifier} />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">Senha</Label>
               <Input
                 id="password"
                 name="password"
                 type="password"
-                placeholder="password"
+                placeholder="senha"
               />
               <ZodErrors error={formState.zodErrors?.password} />
             </div>
@@ -63,16 +63,16 @@ export function SigninForm() {
           <CardFooter className="flex flex-col">
             <SubmitButton
               className="w-full"
-              text="Sign In"
-              loadingText="Loading"
+              text="Entrar"
+              loadingText="Carregando"
             />
             <StrapiErrors error={formState?.strapiErrors} />
           </CardFooter>
         </Card>
         <div className="mt-4 text-center text-sm">
-          Don't have an account?
+          Não tem uma conta?
           <Link className="underline ml-2" href="signup">
-            Sign Up
+            Cadastre-se
           </Link>
         </div>
       </form>

@@ -15,7 +15,6 @@ const Posts: React.FC<PostProps> = ({ blogs }) => {
   const recentPost = blogs.data[blogs.meta.pagination.total - 1].attributes;
   const posts = blogs.data;
   const router = useRouter();
-  console.log(posts);
   const RecentPostLink = (slug: string) => {
     const handleClick = () => {
       router.push(`/blog/` + slug);

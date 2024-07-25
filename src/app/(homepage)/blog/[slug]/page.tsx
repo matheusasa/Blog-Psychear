@@ -18,7 +18,7 @@ const PostPage = async (props: any) => {
     <div>
       <NavBar />
       <div className="h-full py-[64px] text-black">
-        <div className="flex flex-col px-[400px]">
+        <div className="flex flex-col lg:px-[400px]">
           <div className="flex justify-start text-2xl font-bold">
             {blogs[0].attributes.categoria_blogs.data.attributes.Nome}
           </div>

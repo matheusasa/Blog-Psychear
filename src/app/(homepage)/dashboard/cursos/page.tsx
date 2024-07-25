@@ -7,7 +7,6 @@ import RecCourses from "./_components/reccourses";
 const CoursePage = async () => {
   const user = await getUserMeLoader();
   const userData = user.data;
-  console.log(userData);
 
   const allCursosResponse = await allfetchcursos();
   const allCursos = allCursosResponse.data;

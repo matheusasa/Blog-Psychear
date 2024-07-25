@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { LogoutButton } from "@/components/custom/LogoutButton";
 import Link from "next/link";
 
@@ -6,48 +8,68 @@ export default function DashboardLayout({
 }: {
   readonly children: React.ReactNode;
 }) {
-  return (
-    <div className="h-screen grid grid-cols-[260px_1fr]">
-      <nav className="border-r bg-gray-100/40 dark:bg-gray-800/40">
-        <div className="flex h-full max-h-screen flex-col gap-2">
-          <div className="flex h-[60px] items-center border-b px-6">
-            <Link
-              className="flex items-center gap-2 font-semibold"
-              href="/dashboard"
-            >
-              <LayoutDashboardIcon className="h-6 w-6" />
-              <span className="">Dashboard</span>
-            </Link>
-          </div>
-          <div className="flex-1 overflow-auto py-2">
-            <nav className="grid items-start px-4 text-sm font-medium">
-              <Link
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                href="/dashboard/"
-              >
-                <ViewIcon className="h-4 w-4" />
-                Recomendados para você
-              </Link>
-              <Link
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                href="/dashboard/cursos"
-              >
-                <ViewIcon className="h-4 w-4" />
-                Seus cursos
-              </Link>
+  const [isNavVisible, setIsNavVisible] = useState(true);
 
+  const toggleNavVisibility = () => {
+    setIsNavVisible(!isNavVisible);
+  };
+
+  return (
+    <div
+      className={`h-screen grid ${
+        isNavVisible ? "grid-cols-[260px_1fr]" : "grid-cols-[1fr]"
+      }`}
+    >
+      {isNavVisible && (
+        <nav className="border-r bg-gray-100/40 dark:bg-gray-800/40">
+          <div className="flex h-full max-h-screen flex-col gap-2">
+            <div className="flex h-[60px] items-center border-b px-6">
               <Link
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                href="/dashboard/account"
+                className="flex items-center gap-2 font-semibold"
+                href="/dashboard"
               >
-                <UsersIcon className="h-4 w-4" />
-                Seu perfil
+                <LayoutDashboardIcon className="h-6 w-6" />
+                <span className="">Dashboard</span>
               </Link>
-            </nav>
+            </div>
+            <div className="flex-1 overflow-auto py-2">
+              <nav className="grid items-start px-4 text-sm font-medium">
+                <Link
+                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                  href="/dashboard/"
+                >
+                  <ViewIcon className="h-4 w-4" />
+                  Recomendados para você
+                </Link>
+                <Link
+                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                  href="/dashboard/cursos"
+                >
+                  <ViewIcon className="h-4 w-4" />
+                  Seus cursos
+                </Link>
+
+                <Link
+                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                  href="/dashboard/account"
+                >
+                  <UsersIcon className="h-4 w-4" />
+                  Seu perfil
+                </Link>
+              </nav>
+            </div>
           </div>
-        </div>
-      </nav>
-      <main className="flex flex-col overflow-scroll">{children}</main>
+        </nav>
+      )}
+      <main className="flex flex-col overflow-scroll">
+        <button
+          onClick={toggleNavVisibility}
+          className="p-2 m-2 w-[60px] absolute bg-gray-200 rounded"
+        >
+          {isNavVisible ? "<-" : "->"}
+        </button>
+        {children}
+      </main>
     </div>
   );
 }
@@ -70,26 +92,6 @@ function LayoutDashboardIcon(props: any) {
       <rect width="7" height="5" x="14" y="3" rx="1" />
       <rect width="7" height="9" x="14" y="12" rx="1" />
       <rect width="7" height="5" x="3" y="16" rx="1" />
-    </svg>
-  );
-}
-
-function PieChartIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
-      <path d="M22 12A10 10 0 0 0 12 2v10z" />
     </svg>
   );
 }

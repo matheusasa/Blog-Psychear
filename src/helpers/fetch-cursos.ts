@@ -54,7 +54,7 @@ export const fetchcursoslug = async (params:any) =>{
   };
   try {
     const request = await fetch(
-      `${config.api}/api/cursos${params}?populate=*`,
+      `${config.api}/api/cursos?populate=*&${params}`,
       reqOptions
     );
     
