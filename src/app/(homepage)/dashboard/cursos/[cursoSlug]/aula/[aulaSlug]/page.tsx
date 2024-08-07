@@ -1,25 +1,24 @@
 "use client";
-import { useRouter } from "next/navigation";
-import Video from "next-video";
+import { useParams } from "next/navigation";
+import AulaComponent from "./_components/aulapage";
+import { fetchuni, fetchunit } from "@/helpers/fetch-uni";
 
-const AulaPage = () => {
-  const router = useRouter(); // Hook de navegação
-
+const AulaPage = async () => {
+  const { cursoSlug, aulaSlug } = useParams();
+  const cursoinfo = await fetchuni("cursos", `filters[slug][$eq]=${cursoSlug}`);
+  const aulainfo = await fetchuni("aulas", `filters[slug][$eq]=${aulaSlug}`);
+  console.log(aulainfo);
+  const capituloinfo = await fetchunit(
+    "capitulos",
+    `populate=*&filters[aulas][slug][$contains]=${aulainfo.data[0].attributes.slug}`
+  );
   return (
     <div>
-      Aula online{" "}
-      <button
-        onClick={() => router.back()}
-        className="mb-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
-      >
-        Voltar
-      </button>
-      <Video
-        src={
-          "https://strapi.mtswebsft.online/uploads/WYD_2024_07_21_19_59_48_27a1b12810.mp4"
-        }
+      <AulaComponent
+        infoaula={aulainfo}
+        infocurso={cursoinfo}
+        infocapi={capituloinfo}
       />
-      ;
     </div>
   );
 };

@@ -14,7 +14,9 @@ const Feedback = () => {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </div>
           <div className="text-2xl">
-            <Link href="/sobre-nos">Saiba mais &gt;</Link>{" "}
+            <Link href="https://www.doctoralia.com.br/clinicas/psychear-clinica-de-psicologia#facility-opinion-stats">
+              Saiba mais &gt;
+            </Link>{" "}
           </div>{" "}
         </div>{" "}
         <div className="p-[80px] w-[50%]">

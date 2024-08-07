@@ -8,6 +8,7 @@ interface Aula {
   attributes: {
     Nome: string;
     url: string;
+    slug: string;
   };
 }
 
@@ -98,7 +99,7 @@ const CursoDetalhes: React.FC<CursoDetalhesProps> = ({ curso, capitulo }) => {
                   className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded transition-colors"
                 >
                   <Link
-                    href={`${curso.slug}/aula/${aula.attributes.Nome}`}
+                    href={`${curso.slug}/aula/${aula.attributes.slug}`}
                     className="text-blue-600 dark:text-blue-400 hover:underline"
                   >
                     {aula.attributes.Nome}
