@@ -22,7 +22,7 @@ const AulaComponent: React.FC<AulaProps> = ({
   infocapi,
 }) => {
   const router = useRouter(); // Hook de navegação
-  console.log();
+  console.log(infocapi.data);
   return (
     <div>
       <div className="h-[70px] flex justify-center items-center text-center">
@@ -31,7 +31,7 @@ const AulaComponent: React.FC<AulaProps> = ({
       <div className="flex justify-center">
         <Player
           src={`${config.api}${infoaula.data[0].attributes.Aula.data.attributes.url}`}
-          style={{ width: "1000px" }}
+          style={{ width: "1000px", height: "500px" }}
         />
       </div>
 
@@ -41,7 +41,7 @@ const AulaComponent: React.FC<AulaProps> = ({
             <AccordionTrigger>Capitulo</AccordionTrigger>
             {infocapi.data[0].attributes.aulas.data.map((aula: any) => {
               return (
-                <Link href="">
+                <Link href={`${aula.attributes.slug}`}>
                   <AccordionContent key={aula.id}>
                     {aula.attributes.Nome}
                   </AccordionContent>
