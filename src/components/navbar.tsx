@@ -41,9 +41,11 @@ const NavBar = () => {
         <div className="px-5">
           <Link href="/sobre-nos">Sobre nós</Link>
         </div>
-        <Button variant="secondary" onClick={agendad}>
-          Agendar
-        </Button>
+        <div>
+          <Button variant="secondary" onClick={agendad}>
+            Agendar
+          </Button>
+        </div>
       </div>
     </div>
   );

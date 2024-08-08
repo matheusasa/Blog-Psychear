@@ -2,6 +2,14 @@
 import { useState } from "react";
 import { LogoutButton } from "@/components/custom/LogoutButton";
 import Link from "next/link";
+import { Sheet } from "lucide-react";
+import {
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export default function DashboardLayout({
   children,
@@ -21,7 +29,7 @@ export default function DashboardLayout({
       }`}
     >
       {isNavVisible && (
-        <nav className="border-r bg-gray-100/40 dark:bg-gray-800/40">
+        <nav className=" hidden lg:block  border-r bg-gray-100/40 dark:bg-gray-800/40">
           <div className="flex h-full max-h-screen flex-col gap-2">
             <div className="flex h-[60px] items-center border-b px-6">
               <Link
@@ -61,10 +69,11 @@ export default function DashboardLayout({
           </div>
         </nav>
       )}
+
       <main className="flex flex-col overflow-scroll">
         <button
           onClick={toggleNavVisibility}
-          className="p-2 m-2 w-[60px] absolute bg-gray-200 rounded"
+          className="p-2 m-2 w-[60px] absolute bg-gray-200 rounded lg:block hidden"
         >
           {isNavVisible ? "<-" : "->"}
         </button>

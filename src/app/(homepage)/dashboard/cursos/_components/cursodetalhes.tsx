@@ -50,7 +50,7 @@ const CursoDetalhes: React.FC<CursoDetalhesProps> = ({ curso, capitulo }) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row w-full">
+    <div className="flex  md:flex-row w-full">
       {/* Sidebar de Capítulos */}
       <aside className="w-full md:w-1/4 p-4 border-r bg-gray-50 dark:bg-gray-800 h-screen">
         <h2 className="text-xl font-semibold mb-4 pl-[70px]">Capítulos</h2>

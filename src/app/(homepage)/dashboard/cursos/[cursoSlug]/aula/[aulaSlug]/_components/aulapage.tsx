@@ -22,29 +22,30 @@ const AulaComponent: React.FC<AulaProps> = ({
   infocapi,
 }) => {
   const router = useRouter(); // Hook de navegação
-  console.log(infocapi.data);
   return (
-    <div>
+    <div className="w-full">
       <div className="h-[70px] flex justify-center items-center text-center">
         Nome da Aula {infoaula.data[0].attributes.Nome}
       </div>
       <div className="flex justify-center">
         <Player
           src={`${config.api}${infoaula.data[0].attributes.Aula.data.attributes.url}`}
-          style={{ width: "1000px", height: "500px" }}
+          style={{ width: "8000px", height: "500px" }}
         />
       </div>
 
       <div className="flex justify-center">
-        <Accordion type="single" collapsible>
+        <Accordion
+          type="single"
+          collapsible
+          className="w-[100%] min-w-[400px] px-10 max-w-[800px] py-10"
+        >
           <AccordionItem value="item-1">
             <AccordionTrigger>Capitulo</AccordionTrigger>
             {infocapi.data[0].attributes.aulas.data.map((aula: any) => {
               return (
-                <Link href={`${aula.attributes.slug}`}>
-                  <AccordionContent key={aula.id}>
-                    {aula.attributes.Nome}
-                  </AccordionContent>
+                <Link key={aula.id} href={`${aula.attributes.slug}`}>
+                  <AccordionContent>{aula.attributes.Nome}</AccordionContent>
                 </Link>
               );
             })}
