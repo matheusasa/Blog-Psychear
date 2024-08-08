@@ -30,7 +30,7 @@ const AulaComponent: React.FC<AulaProps> = ({
       <div className="flex justify-center">
         <Player
           src={`${config.api}${infoaula.data[0].attributes.Aula.data.attributes.url}`}
-          style={{ width: "8000px", height: "500px" }}
+          style={{ width: "800px", height: "500px", maxWidth: "700px" }}
         />
       </div>
 

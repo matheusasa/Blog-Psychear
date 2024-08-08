@@ -25,11 +25,13 @@ export default function DashboardLayout({
   return (
     <div
       className={`h-screen grid ${
-        isNavVisible ? "grid-cols-[260px_1fr]" : "grid-cols-[1fr]"
+        isNavVisible
+          ? "lg:grid-cols-[260px_1fr] sm:grid-cols-[1fr]"
+          : "grid-cols-[1fr]"
       }`}
     >
       {isNavVisible && (
-        <nav className=" hidden lg:block  border-r bg-gray-100/40 dark:bg-gray-800/40">
+        <nav className="hidden lg:block border-r bg-gray-100/40 dark:bg-gray-800/40">
           <div className="flex h-full max-h-screen flex-col gap-2">
             <div className="flex h-[60px] items-center border-b px-6">
               <Link
@@ -73,7 +75,7 @@ export default function DashboardLayout({
       <main className="flex flex-col overflow-scroll">
         <button
           onClick={toggleNavVisibility}
-          className="p-2 m-2 w-[60px] absolute bg-gray-200 rounded lg:block hidden"
+          className="p-2 m-2 w-[60px] bg-gray-200 rounded lg:block sm:absolute sm:right-0 sm:top-0"
         >
           {isNavVisible ? "<-" : "->"}
         </button>
