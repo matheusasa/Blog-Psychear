@@ -10,6 +10,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import NavbarMbl from "@/components/navbarmbl";
 
 export default function DashboardLayout({
   children,
@@ -66,16 +67,24 @@ export default function DashboardLayout({
                   <UsersIcon className="h-4 w-4" />
                   Seu perfil
                 </Link>
+                <Link
+                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                  href="/"
+                >
+                  <ViewIcon className="h-4 w-4" />
+                  Voltar para o site
+                </Link>
               </nav>
             </div>
           </div>
         </nav>
       )}
+      <NavbarMbl />
 
       <main className="flex flex-col overflow-scroll">
         <button
           onClick={toggleNavVisibility}
-          className="p-2 m-2 w-[60px] bg-gray-200 rounded lg:block sm:absolute sm:right-0 sm:top-0"
+          className="p-2 m-2 w-[60px] bg-gray-200 rounded lg:block sm:absolute hidden sm:right-0 sm:top-0"
         >
           {isNavVisible ? "<-" : "->"}
         </button>

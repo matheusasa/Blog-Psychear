@@ -44,14 +44,6 @@ const RecCourses: React.FC<Props> = ({ recommendedCursos }) => {
           </Card>
         ))}
       </div>
-      <div className="w-full justify-end flex pr-5 gap-x-2">
-        <div className="gap-x-2 bg-white rounded shadow-lg transition-transform transform hover:scale-105 hover:shadow-lg p-2">
-          Ir
-        </div>
-        <div className="gap-x-2 bg-white rounded shadow-lg transition-transform transform hover:scale-105 hover:shadow-lg p-2">
-          Voltar
-        </div>
-      </div>
     </div>
   );
 };

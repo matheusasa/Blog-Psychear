@@ -30,11 +30,11 @@ const OwnedCourses = async () => {
   return (
     <div>
       <div className="bg-[#bdd5ed] h-[600px] w-full">
-        <div className="px-[140px] pt-[40px] font-bold text-3xl">
+        <div className="lg:px-[140px] flex justify-center pt-[40px] font-bold text-3xl">
           Seus cursos
         </div>
 
-        <div className="px-[140px] py-[60px] flex justify-between">
+        <div className="lg:px-[140px] py-[60px] sm:flex justify-center flex lg:justify-between">
           {allCourses.map((cursoData: any) => (
             <Link
               href={`/dashboard/cursos/${cursoData.data.attributes.slug}`}
@@ -63,14 +63,6 @@ const OwnedCourses = async () => {
               </Card>
             </Link>
           ))}
-        </div>
-        <div className="w-full justify-end flex pr-[80px] gap-x-2">
-          <div className="gap-x-2 bg-white rounded shadow-lg transition-transform transform hover:scale-105 hover:shadow-lg">
-            <ArrowLeft />
-          </div>
-          <div className="gap-x-2 bg-white rounded shadow-lg transition-transform transform hover:scale-105 hover:shadow-lg">
-            <ArrowRight />
-          </div>
         </div>
       </div>
     </div>

@@ -16,8 +16,8 @@ export default async function Home() {
   const blogs = await fetchBlog(`filters[Postado][$eq]=true`);
   const blogs1 = await fetchBlog(`filters[Destaque][$eq]=true`);
   const cat = await fetchCat();
-  const mission = await fetchuni("nossa-missao");
-  const comecamos = await fetchuni("why-we-started");
+  const mission = await fetchuni("mission","");
+  const comecamos = await fetchuni("comecamo","");
   const aut = await fetchAut();
   return (
     <div className="">

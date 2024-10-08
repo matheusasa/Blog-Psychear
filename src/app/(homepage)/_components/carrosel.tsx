@@ -39,19 +39,19 @@ const CarouselDemo: React.FC<PostProps> = ({ blogs }) => {
           <SwiperSlide key={post.id}>
             <div className="relative w-full h-full">
               <Image
-                src={`${config.api}${post.attributes.ImagemContent.data.attributes.url}`}
-                alt={post.attributes.ImagemContent.data.attributes.name}
+                src={`${config.api}${post.ImagemContent.url}`}
+                alt={post.ImagemContent.name}
                 fill
                 style={{ objectFit: "cover" }} // Atualizado para a nova sintaxe
               />
               <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center">
                 <div className="text-white p-10 px-[300px]">
                   <h1 className="text-3xl font-bold">
-                    {post.attributes.Titulo}
+                    {post.Titulo}
                   </h1>
-                  <p className="mt-4">{post.attributes.Sumario}</p>
+                  <p className="mt-4">{post.Sumario}</p>
                   <div className="pt-5">
-                    <Button onClick={RecentPostLink(post.attributes.slug)}>
+                    <Button onClick={RecentPostLink(post.slug)}>
                       Saiba mais...
                     </Button>
                   </div>

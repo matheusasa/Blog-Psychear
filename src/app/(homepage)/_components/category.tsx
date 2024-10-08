@@ -4,11 +4,9 @@ import { Building2, CircleDollarSign, Cpu, Rocket } from "lucide-react";
 // Defina a estrutura do objeto `cat` com uma interface
 interface Cat {
   id: number;
-  attributes: {
-    id: number;
-    Nome: string;
-    Descricao: string;
-  };
+  Nome: string;
+  Descricao: string;
+
 }
 
 interface CategoryProps {
@@ -27,7 +25,7 @@ const Category: React.FC<CategoryProps> = ({ cat }) => {
         <div className="flex justify-center text-3xl font-bold">
           Escolha uma categoria
         </div>
-        <div className="flex justify-between w-full pt-[48px]">
+        <div className="flex flex-wrap justify-center w-full pt-[48px] gap-4">
           {cat.map((cat) => (
             <div
               key={cat.id} // Certifique-se de que a chave é única
@@ -37,9 +35,9 @@ const Category: React.FC<CategoryProps> = ({ cat }) => {
                 <Building2 />
               </div>
               <div className="flex justify-start w-full px-10 py-5 text-xl font-bold">
-                {cat.attributes.Nome}
+                {cat.Nome}
               </div>
-              <div className="px-10 pb-5">{cat.attributes.Descricao}</div>
+              <div className="px-10 pb-5">{cat.Descricao}</div>
             </div>
           ))}
         </div>

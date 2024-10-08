@@ -15,10 +15,10 @@ const FixedPost: React.FC<FixedProps> = ({ noscomecamos }) => {
         <div className="p-[80px]">
           <div className="text-2xl pb-[24px]">PORQUÊ NÓS COMEÇAMOS?</div>
           <div className="text-5xl font-bold">
-            {noscomecamos.data.attributes.Titulo}
+            {noscomecamos.data.Titulo}
           </div>
           <div className="pt-[16px] pb-[32px]">
-            {noscomecamos.data.attributes.Resumo}
+            {noscomecamos.data.Resumo}
           </div>
           <div>
             <Button variant={"lavander"} size={"lg"}>

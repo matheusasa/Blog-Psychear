@@ -12,7 +12,7 @@ const PostPage = async (props: any) => {
 
   if (!blogs) return null;
 
-  const htmlContent = await parseMarkdown(blogs[0].attributes.Conteudo);
+  const htmlContent = await parseMarkdown(blogs[0].Conteudo);
 
   return (
     <div>
@@ -20,15 +20,15 @@ const PostPage = async (props: any) => {
       <div className="h-full py-[64px] text-black">
         <div className="flex flex-col lg:px-[400px]">
           <div className="flex justify-start text-2xl font-bold">
-            {blogs[0].attributes.categoria_blogs.data.attributes.Nome}
+            {blogs[0].categoria_blog.Nome}
           </div>
           <div className="text-5xl font-bold ">
-            {blogs[0].attributes.Titulo}
+            {blogs[0].Titulo}
           </div>
           <div className="py-[32px]">
             <Image
-              src={`${config.api}${blogs[0].attributes.ImagemContent.data.attributes.url}`}
-              alt={blogs[0].attributes.ImagemContent.data.attributes.url}
+              src={`${config.api}${blogs[0].ImagemContent.url}`}
+              alt={blogs[0].ImagemContent.url}
               width={1000}
               height={500}
             ></Image>

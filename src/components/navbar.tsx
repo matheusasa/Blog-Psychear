@@ -33,9 +33,6 @@ const NavBar = () => {
           <Link href="/">Home</Link>{" "}
         </div>
         <div className="px-5">
-          <Link href="/dashboard/cursos">Cursos</Link>
-        </div>
-        <div className="px-5">
           <Link href="/blog">Blog</Link>{" "}
         </div>
         <div className="px-5">

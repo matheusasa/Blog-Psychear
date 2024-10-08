@@ -22,9 +22,9 @@ const Sobre: React.FC<SobreProps> = ({ mission }) => {
         <div className="p-[80px] w-[50%]">
           <div className="text-2xl">NOSSA MISSAO</div>
           <div className="text-5xl font-bold">
-            {mission.data.attributes.Titulo}
+            {mission.data.Titulo}
           </div>
-          <div className="py-[16px]">{mission.data.attributes.Resumo}</div>
+          <div className="py-[16px]">{mission.data.Resumo}</div>
         </div>
       </div>
     </div>

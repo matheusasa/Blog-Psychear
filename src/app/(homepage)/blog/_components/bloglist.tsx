@@ -25,7 +25,7 @@ const BlogList = ({
       <div className="border w-full"></div>
       {blogs.length > 0 ? (
         currentPosts.map((blog: any) => (
-          <Link href={`/blog/${blog.attributes.slug}`} key={blog.id}>
+          <Link href={`/blog/${blog.slug}`} key={blog.id}>
             <CardPost blog={blog} />
           </Link>
         ))

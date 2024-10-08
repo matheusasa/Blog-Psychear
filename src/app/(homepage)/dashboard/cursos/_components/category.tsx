@@ -17,51 +17,6 @@ const Categorys = () => {
               </div>
               <div className="px-10">Desc</div>
             </div>
-            <div className="border w-[300px] h-FILL flex flex-col hover:bg-lavander items-center transition-transform transform hover:scale-105 hover:shadow-lg rounded-lg py-[48px]">
-              <div className="flex justify-start w-full pt-[50px] px-10">
-                <Building2 />
-              </div>
-              <div className="flex justify-start w-full px-10 py-5 text-xl font-bold">
-                Nome
-              </div>
-              <div className="px-10">Desc</div>
-            </div>
-            <div className="border w-[300px] h-FILL flex flex-col hover:bg-lavander items-center transition-transform transform hover:scale-105 hover:shadow-lg rounded-lg py-[48px]">
-              <div className="flex justify-start w-full pt-[50px] px-10">
-                <Building2 />
-              </div>
-              <div className="flex justify-start w-full px-10 py-5 text-xl font-bold">
-                Nome
-              </div>
-              <div className="px-10">Desc</div>
-            </div>
-            <div className="border w-[300px] h-FILL flex flex-col hover:bg-lavander items-center transition-transform transform hover:scale-105 hover:shadow-lg rounded-lg py-[48px]">
-              <div className="flex justify-start w-full pt-[50px] px-10">
-                <Building2 />
-              </div>
-              <div className="flex justify-start w-full px-10 py-5 text-xl font-bold">
-                Nome
-              </div>
-              <div className="px-10">Desc</div>
-            </div>
-            <div className="border w-[300px] h-FILL flex flex-col hover:bg-lavander items-center transition-transform transform hover:scale-105 hover:shadow-lg rounded-lg py-[48px]">
-              <div className="flex justify-start w-full pt-[50px] px-10">
-                <Building2 />
-              </div>
-              <div className="flex justify-start w-full px-10 py-5 text-xl font-bold">
-                Nome
-              </div>
-              <div className="px-10">Desc</div>
-            </div>
-            <div className="border w-[300px] h-FILL flex flex-col hover:bg-lavander items-center transition-transform transform hover:scale-105 hover:shadow-lg rounded-lg py-[48px]">
-              <div className="flex justify-start w-full pt-[50px] px-10">
-                <Building2 />
-              </div>
-              <div className="flex justify-start w-full px-10 py-5 text-xl font-bold">
-                Nome
-              </div>
-              <div className="px-10">Desc</div>
-            </div>
           </div>
         </div>
       </div>
